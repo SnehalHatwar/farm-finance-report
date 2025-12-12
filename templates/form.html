@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Farm Finance Form</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        input, select { padding: 7px; margin-bottom: 10px; width: 250px; }
+        table, th, td { border: 1px solid black; padding: 5px; border-collapse: collapse; }
+        .btn { padding: 10px 20px; background: green; color: white; border: none; }
+    </style>
+
+    <script>
+        function addExpense() {
+            document.getElementById("expense_table").insertAdjacentHTML(
+                "beforeend",
+                `<tr>
+                    <td><input name='expense_category'></td>
+                    <td><input name='expense_amount' type='number'></td>
+                    <td><input name='expense_date' type='date'></td>
+                    <td><input name='expense_desc'></td>
+                </tr>`
+            );
+        }
+
+        function addIncome() {
+            document.getElementById("income_table").insertAdjacentHTML(
+                "beforeend",
+                `<tr>
+                    <td><input name='income_category'></td>
+                    <td><input name='income_amount' type='number'></td>
+                    <td><input name='income_date' type='date'></td>
+                    <td><input name='income_desc'></td>
+                </tr>`
+            );
+        }
+    </script>
+</head>
+
+<body>
+<h2>Farm Finance Report Generator</h2>
+
+<form action="/generate" method="POST">
+
+    <h3>Farmer & Crop Details</h3>
+    <input name="farmer" placeholder="Farmer Name" required><br>
+    <input name="crop" placeholder="Crop Name" required><br>
+    <select name="season">
+        <option>Kharif</option>
+        <option>Rabi</option>
+    </select><br>
+    <input name="acres" type="number" placeholder="Total Acres" required><br>
+    Sowing: <input name="sowing" type="date" required><br>
+    Harvest: <input name="harvest" type="date" required><br>
+    <input name="location" placeholder="Location" required><br>
+
+    <h3>Expenses</h3>
+    <button type="button" onclick="addExpense()">Add Expense Row</button>
+    <table>
+        <tr><th>Category</th><th>Amount</th><th>Date</th><th>Description</th></tr>
+        <tbody id="expense_table"></tbody>
+    </table><br>
+
+    <h3>Income</h3>
+    <button type="button" onclick="addIncome()">Add Income Row</button>
+    <table>
+        <tr><th>Category</th><th>Amount</th><th>Date</th><th>Description</th></tr>
+        <tbody id="income_table"></tbody>
+    </table><br>
+
+    <button class="btn">Generate PDF</button>
+</form>
+
+</body>
+</html>
