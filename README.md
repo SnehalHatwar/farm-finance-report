@@ -19,7 +19,7 @@ The project is a simple Flask backend that takes farm finance information from a
 4. Running the app:
    python app.py
 
-#How to Use the Application
+# How to Use the Application
 1.Open the web form.
 2.Enter the details of the farmer and crop.
 3.As many income and expense rows as needed can be added.
