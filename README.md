@@ -1,4 +1,4 @@
-Farm Finance Report Generator
+# Farm Finance Report Generator
 
 # Overview
 The project is a simple Flask backend that takes farm finance information from a web form, gives a financial summary, draws a graph, and even makes a PDF report that can be saved.
@@ -20,11 +20,11 @@ The project is a simple Flask backend that takes farm finance information from a
    python app.py
 
 # How to Use the Application
-1.Open the web form.
-2.Enter the details of the farmer and crop.
-3.As many income and expense rows as needed can be added.
-4.Submit the form to get the PDF.
-5.Get the PDF report and see it.
+1. Open the web form.
+2. Enter the details of the farmer and crop.
+3. As many income and expense rows as needed can be added.
+4. Submit the form to get the PDF.
+5. Get the PDF report and see it.
 
 # Libraries Used
 - Flask
